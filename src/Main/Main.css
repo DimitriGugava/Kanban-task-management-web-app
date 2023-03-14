@@ -192,3 +192,106 @@ input:checked + .slider:before {
   text-align: left;
   color: #828fa3;
 }
+
+.MainHeader_Box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 97px;
+  width: auto;
+  margin-left: 300px;
+}
+.Main_HeaderBox_Text {
+  height: 30px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000112;
+  margin-left: 24px;
+}
+.Main_HeaderBox_AddTask_Box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 48px;
+  width: 192px;
+  margin-left: 701px;
+  gap: 24px;
+}
+.Main_HeaderBox_AddTask_Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 164px;
+  border-radius: 24px;
+  background: #635fc7;
+  font-family: "Plus Jakarta Sans";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #ffffff;
+  opacity: 0.6;
+  border: none;
+}
+.Main_HeaderBox_AddTask_Button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.Main_HeaderBox_AddTask_Button:active {
+  background: #4f4bc6;
+}
+.Main_HeaderBox_ThreeDots:hover {
+  cursor: pointer;
+}
+.MainContainer_Center_ContentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 103px;
+  width: 493px;
+  gap: 32px;
+  margin: 364px 622px;
+}
+.MainContainer_Center_ContentBox_Text {
+  height: 23px;
+  width: 491px;
+
+  font-family: "Plus Jakarta Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #828fa3;
+}
+.MainContainer_Center_ContentBox_Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 174px;
+  border-radius: 24px;
+  background: #635fc7;
+  font-family: "Plus Jakarta Sans";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #ffffff;
+  border: none;
+}
+.MainContainer_Center_ContentBox_Button:hover {
+  cursor: pointer;
+
+  background: #4f4bc6;
+}
+.MainContainer_Center_ContentBox_Button:active {
+  background: #3935c6;
+}

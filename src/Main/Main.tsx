@@ -7,6 +7,7 @@ import boardblueicon from "../icons/boardblueicon.svg";
 import sun from "../icons/sun.svg";
 import moon from "../icons/moon.svg";
 import eyeicon from "../icons/eyeicon.svg";
+import threedots from "../icons/threedots.svg";
 const Main = () => {
   return (
     <div className="main">
@@ -61,6 +62,23 @@ const Main = () => {
             Hide Sidebar
           </div>
         </div>
+      </div>
+      <div className="MainHeader_Box">
+        <a className="Main_HeaderBox_Text">Platform Launch</a>
+        <div className="Main_HeaderBox_AddTask_Box">
+          <button className="Main_HeaderBox_AddTask_Button">
+            + Add New Task
+          </button>
+          <img className="Main_HeaderBox_ThreeDots" src={threedots} />
+        </div>
+      </div>
+      <div className="MainContainer_Center_ContentBox">
+        <a className="MainContainer_Center_ContentBox_Text">
+          This board is empty. Create a new column to get started.
+        </a>
+        <button className="MainContainer_Center_ContentBox_Button">
+          + Add New Column
+        </button>
       </div>
     </div>
   );
