@@ -1,14 +1,33 @@
 import "./editTask.css";
 import closeicon from "../icons/close.svg";
 import arrow from "../icons/arrow.svg";
-const EditTask = () => {
+const EditTask = (props: any) => {
   return (
     <div className="editTask_Container">
-      <div className="editTask_Box">
-        <h1 className="editTask_Header_Text">Edit Task</h1>
+      <div
+        className="editTask_Box"
+        style={{
+          backgroundColor: props.darkMode ? "#20212C" : "#F4F7FD",
+        }}
+      >
+        <h1
+          className="editTask_Header_Text"
+          style={{
+            color: !props.darkMode ? "#20212C" : "#F4F7FD",
+          }}
+        >
+          Edit Task
+        </h1>
         <div className="editTask_Content_Box">
           <div className="editTask_Content_Box_Title">
-            <h1 className="editTask_Content_Box_Title_Text">Title</h1>
+            <h1
+              className="editTask_Content_Box_Title_Text"
+              style={{
+                color: !props.darkMode ? "#20212C" : "#F4F7FD",
+              }}
+            >
+              Title
+            </h1>
             <input
               className="editTask_Content_Box_Title_Input"
               type="text"
@@ -16,7 +35,14 @@ const EditTask = () => {
             />
           </div>
           <div className="editTask_Content_Box_Description_Box">
-            <h1 className="editTask_Content_Box_Title_Text">Description</h1>
+            <h1
+              className="editTask_Content_Box_Title_Text"
+              style={{
+                color: !props.darkMode ? "#20212C" : "#F4F7FD",
+              }}
+            >
+              Description
+            </h1>
             <div className="editTask_Content_Box_Description_Input_Box">
               <input
                 className="editTask_Content_Box_Description_Input"
@@ -26,7 +52,14 @@ const EditTask = () => {
             </div>
           </div>
           <div className="editTask_Content_Box_SubTask_Box">
-            <a className="editTask_Content_Box_SubTask_HeaderText">Subtasks</a>
+            <a
+              className="editTask_Content_Box_SubTask_HeaderText"
+              style={{
+                color: !props.darkMode ? "#20212C" : "#F4F7FD",
+              }}
+            >
+              Subtasks
+            </a>
             <div className="editTask_Content_Box_SubTask_InputBox">
               <input
                 className="editTask_Content_Box_SubTask_Input"
@@ -54,7 +87,14 @@ const EditTask = () => {
             </button>
           </div>
           <div className="editTask_Content_Box_Status_Box">
-            <a className="editTask_Content_Box_Status_Box_Header">Status</a>
+            <a
+              className="editTask_Content_Box_Status_Box_Header"
+              style={{
+                color: !props.darkMode ? "#20212C" : "#F4F7FD",
+              }}
+            >
+              Status
+            </a>
             <div className="editTask_Content_Box_Status_Box_Input_Box">
               <input
                 className="editTask_Content_Box_Status_Box_Input"

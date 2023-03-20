@@ -90,7 +90,7 @@
   padding-left: 10px;
   color: linear-gradient(0deg, #ffffff, #ffffff),
     linear-gradient(0deg, rgba(130, 143, 163, 0.25), rgba(130, 143, 163, 0.25));
-  border: 1px solid #828fa340;
+  /* border: 1px solid #828fa340; */
   mix-blend-mode: normal;
   opacity: 0.6;
 }

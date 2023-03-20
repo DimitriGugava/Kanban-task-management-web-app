@@ -13,6 +13,7 @@ import kanbanheadertextwhite from "../icons/kanbanheadertextwhite.svg";
 import NewBoard from "../NewBoard/newboard";
 
 import EditTask from "../EditTask/editTask";
+import ViewTask from "../ViewTask/ViewTask";
 
 const Main = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -34,7 +35,9 @@ const Main = () => {
   return (
     <>
       {/* <NewBoard darkMode={darkMode} /> */}
-      <EditTask />
+      {/* <EditTask darkMode={darkMode} /> */}
+
+      {/* <ViewTask darkMode={darkMode} /> */}
       <div
         className="main"
         style={{
