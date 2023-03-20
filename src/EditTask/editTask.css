@@ -1,0 +1,229 @@
+.editTask_Container {
+  position: absolute;
+  height: 150%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+.editTask_Box {
+  height: 675px;
+  width: 480px;
+  background: #ffffff;
+  margin: 32px auto;
+  border-radius: 6px;
+}
+
+.editTask_Header_Text {
+  display: inline-block;
+  height: 23px;
+  width: 77px;
+
+  font-family: "Plus Jakarta Sans";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000112;
+  margin-top: 32px;
+  margin-left: 32px;
+}
+.editTask_Content_Box {
+  height: 500px;
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+.editTask_Content_Box_Title {
+  height: 63px;
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+}
+.editTask_Content_Box_Title_Text {
+  height: 15px;
+  width: 25px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #828fa3;
+}
+.editTask_Content_Box_Title_Input {
+  height: 40px;
+  width: 416px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000112;
+  padding-left: 10px;
+}
+.editTask_Content_Box_Description_Box {
+  height: 129px;
+  width: 416px;
+  display: flex;
+  flex-direction: column;
+}
+.editTask_Content_Box_Description_Input_Box {
+  height: 112px;
+  width: 416px;
+
+  box-sizing: border-box;
+}
+
+.editTask_Content_Box_Description_Input {
+  height: 112px;
+  width: 416px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0px;
+  color: #000112;
+  text-align: start;
+}
+
+.editTask_Content_Box_SubTask_Box {
+  display: flex;
+  flex-direction: column;
+  height: 167px;
+  width: 416px;
+  margin: 32px auto;
+}
+
+.editTask_Content_Box_SubTask_HeaderText {
+  height: 15px;
+  width: 54px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #828fa3;
+}
+.editTask_Content_Box_SubTask_InputBox {
+  height: 40px;
+  width: 416px;
+  display: flex;
+  margin: 8px 0px;
+  flex-direction: row;
+  align-items: center;
+}
+.editTask_Content_Box_SubTask_Input {
+  height: 40px;
+  width: 385px;
+  background: linear-gradient(0deg, #ffffff, #ffffff),
+    linear-gradient(0deg, rgba(130, 143, 163, 0.25), rgba(130, 143, 163, 0.25));
+  border: 1px solid #828fa340;
+  border-radius: 4px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+.editTask_Content_Box_SubTask_Close {
+  height: 14.849242210388184px;
+  width: 14.849242210388184px;
+  margin-left: 24px;
+}
+
+.editTask_Content_Box_SubTask_Button {
+  height: 40px;
+  width: 416px;
+
+  background: #635fc71a;
+  background: rgba(99, 95, 199, 0.1);
+  border-radius: 20px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: center;
+  border: none;
+  color: #635fc7;
+}
+.editTask_Content_Box_SubTask_Button:hover {
+  cursor: pointer;
+}
+.editTask_Content_Box_SubTask_Button:active {
+  background: #635fc7;
+  background: rgba(99, 95, 199, 0.2);
+  color: #ffffff;
+}
+.editTask_Content_Box_Status_Box {
+  display: flex;
+  flex-direction: column;
+  height: 63px;
+  width: 416px;
+}
+.editTask_Content_Box_Status_Box_Header {
+  height: 15px;
+  width: 38px;
+
+  font-family: "Plus Jakarta Sans";
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #828fa3;
+}
+.editTask_Content_Box_Status_Box_Input_Box {
+  height: 40px;
+  width: 416px;
+  display: flex;
+  flex-direction: row;
+  margin: 8px 0px;
+}
+.editTask_Content_Box_Status_Box_Input {
+  height: 40px;
+  width: 416px;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #000112;
+}
+.editTask_Content_Box_Status_Box_Arrow {
+  position: absolute;
+  margin: 18px 390px;
+}
+.editTask_Content_Box_Status_Box_Arrow:hover {
+  cursor: pointer;
+}
+
+.editTask_Content_Box_Create_Taskbnt {
+  height: 40px;
+  width: 416px;
+  margin: 0px 32px;
+  background: #635fc7;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 20px;
+  border: none;
+}
+.editTask_Content_Box_Create_Taskbnt:hover {
+  cursor: pointer;
+}
+.editTask_Content_Box_Create_Taskbnt:active {
+  background: #635fc71a;
+  background: rgba(99, 95, 199, 0.1);
+  color: #635fc7;
+}

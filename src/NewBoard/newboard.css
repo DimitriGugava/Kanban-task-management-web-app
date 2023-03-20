@@ -100,7 +100,7 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 5px;
 }
 .newBoardBox_Content_Box_Add_Collumnt {
   height: 40px;

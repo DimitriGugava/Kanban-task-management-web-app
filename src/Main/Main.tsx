@@ -12,6 +12,8 @@ import { useState } from "react";
 import kanbanheadertextwhite from "../icons/kanbanheadertextwhite.svg";
 import NewBoard from "../NewBoard/newboard";
 
+import EditTask from "../EditTask/editTask";
+
 const Main = () => {
   const [darkMode, setDarkMode] = useState(false);
   const toggleDarkMode = () => {
@@ -31,7 +33,8 @@ const Main = () => {
 
   return (
     <>
-      <NewBoard />
+      {/* <NewBoard darkMode={darkMode} /> */}
+      <EditTask />
       <div
         className="main"
         style={{
