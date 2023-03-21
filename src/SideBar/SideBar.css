@@ -43,10 +43,31 @@
 
   height: 48px;
   width: 276px;
-  background: #635fc7;
+
   border-radius: 0px 100px 100px 0px;
 }
-
+.MainSideBar_Boards_Board_Info_Box_Wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2px;
+  height: 48px;
+  width: 276px;
+  background: rgb(178, 185, 193);
+  border-radius: 0px 100px 100px 0px;
+}
+.MainSideBar_Boards_Board_Info_Box_Wrap:hover {
+  cursor: pointer;
+  background: #635fc7 !important;
+}
+.MainSideBar_Boards_Board_Info_Box_Wrap:active {
+  background: #3a35c2 !important;
+  border-radius: 0px 100px 100px 0px;
+}
+.MainSideBar_Icon {
+  margin-left: 20px;
+  margin-top: 7px;
+}
 .MainSideBar_Boards_Board_Info_Box {
   display: flex;
   flex-direction: row;
@@ -56,6 +77,7 @@
   height: 19px;
   width: 200px;
 }
+
 .MainSideBar_Boards_Board_Info_Box_WhiteText {
   height: 19px;
   width: 140px;
@@ -66,6 +88,9 @@
   letter-spacing: 0px;
   text-align: left;
   color: #ffffff;
+}
+.MainSideBar_Boards_Board_Info_Box_WhiteText:hover {
+  color: #ffffff !important;
 }
 .MainSideBar_Boards_Board_Info_Box_GreyText {
   height: 19px;
@@ -78,6 +103,7 @@
   text-align: left;
   color: #828fa3;
 }
+
 .MainSideBar_Boards_Board_Info_Box_BlueText {
   height: 19px;
   width: 160px;
@@ -88,6 +114,10 @@
   letter-spacing: 0px;
   text-align: left;
   color: #635fc7;
+}
+.MainSideBar_Boards_Board_Info_Box_BlueText:hover {
+  color: #635fc7 !important;
+  cursor: pointer;
 }
 .Main_Dark_Light_Box {
   display: flex;

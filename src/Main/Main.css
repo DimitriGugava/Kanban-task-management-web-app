@@ -106,6 +106,12 @@
   gap: 32px;
   margin: 364px 622px;
 }
+.MainContainer_Center_ContentBox:hover {
+  cursor: pointer;
+}
+.MainContainer_Center_ContentBox:active {
+  background: #e6e9f2;
+}
 .MainContainer_Center_ContentBox_Text {
   height: 23px;
   width: 491px;

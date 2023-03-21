@@ -25,26 +25,35 @@ const SideBar = (props: any) => {
       </div>
       <div className="MainSideBar_Boards_Box">
         <div className="MainSideBar_Boards_Number">ALL BOARDS (3)</div>
+
         <div className="MainSideBar_Boards_Board">
-          <div className="MainSideBar_Boards_Board_Info_Box">
-            <img
-              className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
-              src={boardwhiteicon}
-            />
-            <a className="MainSideBar_Boards_Board_Info_Box_WhiteText">
-              Platform Launch
-            </a>
-          </div>
-          <div className="MainSideBar_Boards_Board_Info_Box">
-            <img
-              className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
-              src={boardgreyicon}
-            />
-            <a className="MainSideBar_Boards_Board_Info_Box_GreyText">
-              Marketing Plan
-            </a>
-          </div>
-          <div className="MainSideBar_Boards_Board_Info_Box">
+          {props.boardsInfo.map((board: any, index: any) => (
+            <div
+              className="MainSideBar_Boards_Board_Info_Box_Wrap"
+              style={{
+                backgroundColor: props.darkMode
+                  ? "black"
+                  : " rgb(178, 185, 193)",
+              }}
+            >
+              <div
+                className="MainSideBar_Boards_Board_Info_Box"
+                style={{ color: props.darkMode ? "white" : "grey" }}
+              >
+                <img
+                  className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
+                  src={boardwhiteicon}
+                />
+                <a className="MainSideBar_Boards_Board_Info_Box_WhiteText">
+                  {board.name}
+                </a>
+              </div>
+            </div>
+          ))}
+          <div
+            className="MainSideBar_Boards_Board_Info_Box"
+            onClick={props.createNewBoard}
+          >
             <img
               className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
               src={boardblueicon}

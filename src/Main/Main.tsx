@@ -8,7 +8,6 @@ import sun from "../icons/sun.svg";
 import moon from "../icons/moon.svg";
 import eyeicon from "../icons/eyeicon.svg";
 import threedots from "../icons/threedots.svg";
-import { useState } from "react";
 import kanbanheadertextwhite from "../icons/kanbanheadertextwhite.svg";
 import NewBoard from "../NewBoard/newboard";
 
@@ -16,10 +15,36 @@ import EditTask from "../EditTask/editTask";
 import ViewTask from "../ViewTask/ViewTask";
 import SideBar from "../SideBar/SideBar";
 import eye from "../icons/eye.svg";
+import data from "../data.json";
+import React, { useState, useEffect } from "react";
+import Columns from "../Columns/Columns";
 
 const Main = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const [hideSideBar, setHideSideBar] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(true);
+  const [boardsInfo, setBoardsInfo] = useState<Board[]>([]);
+  const [newBoard, setNewBoard] = useState(false);
+  const [columnsInfo, setColumnsInfo] = useState(false);
+
+  interface Task {
+    title: string;
+    description: string;
+    status: string;
+    subtasks: {
+      title: string;
+      isCompleted: boolean;
+    }[];
+  }
+
+  interface Column {
+    name: string;
+    tasks: Task[];
+  }
+
+  interface Board {
+    name: string;
+    columns: Column[];
+  }
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -40,9 +65,22 @@ const Main = () => {
     setHideSideBar(!hideSideBar);
   };
 
+  const createNewBoard = () => {
+    setNewBoard(!newBoard);
+  };
+
+  useEffect(() => {
+    setBoardsInfo(data.boards);
+  }, []);
+
+  const addInput = (newInput: any) => {
+    setBoardsInfo([...boardsInfo, newInput]);
+  };
+
   return (
     <>
-      {/* <NewBoard darkMode={darkMode} /> */}
+      {newBoard ? <NewBoard darkMode={darkMode} addInput={addInput} /> : null}
+
       {/* <EditTask darkMode={darkMode} /> */}
 
       {/* <ViewTask darkMode={darkMode} /> */}
@@ -57,6 +95,11 @@ const Main = () => {
             darkMode={darkMode}
             toggleDarkMode={toggleDarkMode}
             toggleHideSideBar={toggleHideSideBar}
+            setNewBoard={setNewBoard}
+            boardsInfo={boardsInfo}
+            createNewBoard={createNewBoard}
+            setBoardsInfo={setBoardsInfo}
+            hideSideBar={hideSideBar}
           />
         ) : (
           <>
@@ -66,8 +109,10 @@ const Main = () => {
                 position: hideSideBar ? "relative" : "absolute",
                 backgroundColor: darkMode ? "#2B2C37" : "white",
                 marginTop: hideSideBar ? "0px" : "-4px",
-                width: hideSideBar ? "0px" : "290px",
-                height: hideSideBar ? "0px" : "97px",
+                marginLeft: hideSideBar ? "0px" : "0px",
+                width: hideSideBar ? "0px" : "300px",
+                height: hideSideBar ? "0px" : "101px",
+                borderRight: hideSideBar ? "none" : "0.1px solid #E4E6EB",
               }}
             >
               <img className="MainSideBar_Icon" src={sidebaricon} />
@@ -105,14 +150,19 @@ const Main = () => {
             <img className="Main_HeaderBox_ThreeDots" src={threedots} />
           </div>
         </div>
-        <div className="MainContainer_Center_ContentBox">
-          <a className="MainContainer_Center_ContentBox_Text">
-            This board is empty. Create a new column to get started.
-          </a>
-          <button className="MainContainer_Center_ContentBox_Button">
-            + Add New Column
-          </button>
-        </div>
+
+        {!columnsInfo ? (
+          <Columns hideSideBar={hideSideBar} />
+        ) : (
+          <div className="MainContainer_Center_ContentBox">
+            <a className="MainContainer_Center_ContentBox_Text">
+              This board is empty. Create a new column to get started.
+            </a>
+            <button className="MainContainer_Center_ContentBox_Button">
+              + Add New Column
+            </button>
+          </div>
+        )}
       </div>
     </>
   );
