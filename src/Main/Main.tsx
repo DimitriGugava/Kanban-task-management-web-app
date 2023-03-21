@@ -14,9 +14,13 @@ import NewBoard from "../NewBoard/newboard";
 
 import EditTask from "../EditTask/editTask";
 import ViewTask from "../ViewTask/ViewTask";
+import SideBar from "../SideBar/SideBar";
+import eye from "../icons/eye.svg";
 
 const Main = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [hideSideBar, setHideSideBar] = useState(false);
+
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
@@ -32,6 +36,10 @@ const Main = () => {
 
   const styles = darkMode ? darkModeStyles : lightModeStyles;
 
+  const toggleHideSideBar = () => {
+    setHideSideBar(!hideSideBar);
+  };
+
   return (
     <>
       {/* <NewBoard darkMode={darkMode} /> */}
@@ -44,74 +52,44 @@ const Main = () => {
           backgroundColor: darkMode ? "#20212C" : "#F4F7FD",
         }}
       >
-        <div
-          className="MainSideBar"
-          style={{ backgroundColor: darkMode ? "black" : "white" }}
-        >
-          <div className="MainSideBar_Header_Box">
-            <img className="MainSideBar_Icon" src={sidebaricon} />
-            {!darkMode ? (
-              <img className="MainSideBar_Header" src={kanbanheadertext} />
-            ) : (
-              <img className="MainSideBar_Header" src={kanbanheadertextwhite} />
-            )}
-          </div>
-          <div className="MainSideBar_Boards_Box">
-            <div className="MainSideBar_Boards_Number">ALL BOARDS (3)</div>
-            <div className="MainSideBar_Boards_Board">
-              <div className="MainSideBar_Boards_Board_Info_Box">
+        {hideSideBar ? (
+          <SideBar
+            darkMode={darkMode}
+            toggleDarkMode={toggleDarkMode}
+            toggleHideSideBar={toggleHideSideBar}
+          />
+        ) : (
+          <>
+            <div
+              className="MainSideBar_Header_Box"
+              style={{
+                position: hideSideBar ? "relative" : "absolute",
+                backgroundColor: darkMode ? "#2B2C37" : "white",
+                marginTop: hideSideBar ? "0px" : "-4px",
+                width: hideSideBar ? "0px" : "290px",
+                height: hideSideBar ? "0px" : "97px",
+              }}
+            >
+              <img className="MainSideBar_Icon" src={sidebaricon} />
+              {!darkMode ? (
+                <img className="MainSideBar_Header" src={kanbanheadertext} />
+              ) : (
                 <img
-                  className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
-                  src={boardwhiteicon}
+                  className="MainSideBar_Header"
+                  src={kanbanheadertextwhite}
                 />
-                <a className="MainSideBar_Boards_Board_Info_Box_WhiteText">
-                  Platform Launch
-                </a>
-              </div>
-              <div className="MainSideBar_Boards_Board_Info_Box">
-                <img
-                  className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
-                  src={boardgreyicon}
-                />
-                <a className="MainSideBar_Boards_Board_Info_Box_GreyText">
-                  Marketing Plan
-                </a>
-              </div>
-              <div className="MainSideBar_Boards_Board_Info_Box">
-                <img
-                  className="MainSideBar_Boards_Board_Info_Box_whiteIcon"
-                  src={boardblueicon}
-                />
-                <a className="MainSideBar_Boards_Board_Info_Box_BlueText">
-                  + Create New Board
-                </a>
-              </div>
+              )}
             </div>
-          </div>
-          <div
-            className="Main_Dark_Light_Box"
-            style={{
-              backgroundColor: darkMode ? "#20212C" : "#F4F7FD",
-            }}
-          >
-            <img className="Main_Dark_Light_Box_Icon" src={sun} />
-            <label className="switch">
-              <input type="checkbox" onClick={toggleDarkMode} />
-              <span className="slider"></span>
-            </label>
-            <img className="Main_Dark_Light_Box_Icon" src={moon} />.
-          </div>
-          <div className="HideSideBar">
-            <div className="HideSideBar_Content_Box">
-              <img className="eyeIcon" src={eyeicon} />
-              Hide Sidebar
-            </div>
-          </div>
-        </div>
+            <button className="showSideBar" onClick={toggleHideSideBar}>
+              <img src={eye} className="showSideBar_EyeIcon" />
+            </button>
+          </>
+        )}
         <div
           className="MainHeader_Box"
           style={{
             backgroundColor: darkMode ? "#2B2C37" : "white",
+            marginTop: hideSideBar ? "0px" : "0px",
           }}
         >
           <a
