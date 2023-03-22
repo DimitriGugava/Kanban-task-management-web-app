@@ -79,7 +79,13 @@ const Main = () => {
 
   return (
     <>
-      {newBoard ? <NewBoard darkMode={darkMode} addInput={addInput} /> : null}
+      {newBoard ? (
+        <NewBoard
+          boardsInfo={boardsInfo}
+          darkMode={darkMode}
+          addInput={addInput}
+        />
+      ) : null}
 
       {/* <EditTask darkMode={darkMode} /> */}
 
@@ -152,7 +158,7 @@ const Main = () => {
         </div>
 
         {!columnsInfo ? (
-          <Columns hideSideBar={hideSideBar} />
+          <Columns hideSideBar={hideSideBar} boardsInfo={boardsInfo} />
         ) : (
           <div className="MainContainer_Center_ContentBox">
             <a className="MainContainer_Center_ContentBox_Text">
